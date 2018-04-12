@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vue的Class和Style绑定</title>
+</head>
+
+<body>
+    <div id="app" class="static" :class="{active:active,hasError:hasError}">
+    </div>
+    <div id="app2" class="static" :class="[isActive?active:hasError]">
+        <button @click="isActive=isActive?false:true">点击更换class</button>
+    </div>
+    <div id="app3" :style="app3Style">
+        APP3测试内联样式
+    </div>
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="vueDemoB.js"></script>

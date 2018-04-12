@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vue渲染</title>
+</head>
+
+<body>
+    <div id="app3">
+        <ul>
+            <li v-for="(item,index) in items" :key="item.id">
+                {{parentItem}} {{index}} {{item.message}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(value,key,index) in object">
+                {{parentItem}} - {{index}} - {{key}} - {{value}}
+            </li>
+        </ul>
+        <span v-for="n of 10"> {{n}} </span>
+        <button @click="addItem()">XX</button>
+    </div>
+
+    <div id="app2">
+        <template v-if="input === 'username'">
+            <label>请输入用户名</label>
+            <input placeholder="用户名" key="1"/>
+        </template>
+        <template v-else>
+            <label>请输入Email</label>
+            <input placeholder="Email地址" key="2"/>
+        </template>
+        <label v-show="input === 'username'">呵呵</label>
+        <button @click="change()">点击更换登陆方式</button>
+    </div>
+    <div id="app">
+        <template v-if="ok">
+            <h1>Title</h1>
+            <p>Paragraph 1</p>
+            <p>Paragraph 2</p>
+        </template>
+        <h1 v-if="ok">Yes</h1>
+        <h1 v-else>No</h1>
+    </div>
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="vueDemoC.js"></script>

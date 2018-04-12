@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vue计算属性</title>
+</head>
+
+<body>
+    <div id="watch">
+        <p>请问一个问题</p>
+        <input v-model="question" />
+        <p>{{answer}}</p>
+    </div>
+    <div id="app">
+        <p>{{message}}</p>
+        <p>{{reversedMessage}}</p>
+        <p>{{firstname}}</p>
+        <p>{{lastname}}</p>
+        <p>{{fullname}}</p>
+        <button @click="reverseFullname()">点击反转</button>
+    </div>
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="vueDemoA.js"></script>
