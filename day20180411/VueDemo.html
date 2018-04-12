@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vue模版语法</title>
+</head>
+
+<body>
+  <div id="app">
+    {{message}}
+    <a v-bind:href="url">百度</a>
+    <button v-bind:id="appID" v-bind:disabled="isDisabled">button</button>
+    <p v-if="seen">你看不见我</p>
+    <form v-on:submit.prevent="onSubmit">
+      <button type="submit">提交测试</button>
+    </form>
+  </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="vueDemo.js"></script>
+
+</html>
