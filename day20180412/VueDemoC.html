@@ -6,7 +6,33 @@
 </head>
 
 <body>
+    <div id="app4">
+        <ul v-for="key of keys" v-if="key%2===0">
+            <li>{{key}}</li>
+        </ul>
+
+        <span>XX</span>
+        <ul v-if="keys.length > 5">
+            <li v-for="key of keys">{{key}}</li>
+        </ul>
+        <span v-else> 值的长度不够</span>
+        <span>XX</span>
+
+        <ul v-for="key of even(keys)">
+            <li>{{key}}</li>
+        </ul>
+        <ul v-for="key of evenNumbers">
+            <li>{{key}}</li>
+        </ul>
+    </div>
     <div id="app3">
+        <ul>
+            <template v-for="(item,index) in items" :key="item.id">
+                <li>
+                    template : {{index}} - {{item.message}}
+                </li>
+            </template>
+        </ul>
         <ul>
             <li v-for="(item,index) in items" :key="item.id">
                 {{parentItem}} {{index}} {{item.message}}
@@ -18,7 +44,13 @@
             </li>
         </ul>
         <span v-for="n of 10"> {{n}} </span>
-        <button @click="addItem()">XX</button>
+        <button @click="addItem()">
+            XX
+        </button>
+        <button @click="addItem2()">
+            XXXX
+        </button>
+        <button @click="addItem3()">XXXXXX</button>
     </div>
 
     <div id="app2">
