@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vue表单输入绑定</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 文本输入框 -->
+        <input v-model="message" placeholder="edit me"><br />
+        <!-- 多行文本输入框 -->
+        <textarea v-model="message" placeholder="edit me"></textarea><br />
+        <p style="white-space: pre;">Message is:{{ message }}</p>
+        <!-- 复选框 -->
+        <input type="checkbox" v-model="checked" id="checkbox">
+        <label for="checkbox">{{checked}}</label><br />
+        <!-- 多个复选框 -->
+        <input type="checkbox" v-model="checkNames" id="ding" value="丁正刚">
+        <label for="ding">丁正刚</label>
+        <input type="checkbox" v-model="checkNames" id="pan" value="顾冬红">
+        <label for="pan">顾冬红</label>
+        <p>已选：{{checkNames}}</p>
+        <!-- 单选按钮 -->
+        <input type="radio" v-model="radio" id="one" value="one" />
+        <label for="one">One</label><br />
+        <input type="radio" v-model="radio" id="two" value="two" />
+        <label for="two">Two</label><br />
+        <p>单选：{{radio}}</p>
+        <!-- 下拉选择框 -->
+        <select v-model="select">
+            <option>Ding</option>
+            <option>Gu</option>
+        </select>
+        <p>选择了:{{select}}</p>
+        <!-- 多选下拉选择框 -->
+        <select v-model="selects" multiple>
+            <option>Ding</option>
+            <option>Gu</option>
+        </select>
+        <p>选择了:{{selects}}</p>
+        <!-- 动态下拉选择框 -->
+        <select v-model="selects2">
+            <!-- v-bind将改值和value绑定 -->
+            <option v-for="i of selectName" v-bind:value="i.key">{{i.name}}</option>
+        </select>
+        <p>选择了:{{selects2}}</p>
+    </div>
+
+    <div id="app2">
+        <!-- 复选框 -->
+        <input type="checkbox" v-model="toggle" v-bind:true-value="a" v-bind:false-value="b"><label>{{toggle}}</label>
+        <p>复选框值为：{{toggle}}</p>
+        <!-- 单选框 -->
+        <div>
+            <input type="radio" v-model="message" :value="a"><label>A</label>
+            <input type="radio" v-model="message" :value="b"><label>B</label>
+        </div>
+        <p>单选框值为：{{message}}</p>
+        <!-- 下拉选择框 -->
+        <select v-model="selected">
+            <option :value="{number:12345}">12345</option>
+            <option :value="123">123</option>
+        </select>
+        <p>下拉框值为：{{selected.number}}</p>
+        <p>下拉框值为：{{selected}}</p>
+    </div>
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="vueDemoA.js"></script>
