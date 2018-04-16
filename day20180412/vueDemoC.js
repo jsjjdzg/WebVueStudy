@@ -1,3 +1,32 @@
+Vue.component('textList_tmp', {
+    template: '<li>{{title}}<button @click="$emit(\'remove\')">X</button></li>',
+    props:['title']
+})
+
+var app5 = new Vue({
+    el: "#app5",
+    data: {
+        newtext: '',
+        todos: [
+            { id: 1, title: 'A' },
+            { id: 2, title: 'B' },
+            { id: 3, title: 'C' }
+        ],
+        nextId:4
+    },
+    methods: {
+        addText: function () {
+            if (this.newtext != '') {
+                this.todos.push({
+                    id: this.nextId++,
+                    title: this.newtext
+                })
+            }
+            this.newtext = ''
+        }
+    }
+})
+
 var app = new Vue({
     el: "#app",
     data: {

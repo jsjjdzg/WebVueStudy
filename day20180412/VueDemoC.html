@@ -6,6 +6,12 @@
 </head>
 
 <body>
+    <div id="app5">
+        <input v-model="newtext" v-on:keyup.enter="addText" placeholder="ÇëÌí¼ÓÄÚÈİ"/>
+        <ul>
+            <li is="textList_tmp" v-for="(todo,index) of todos" :key="todo.id" :title="todo.title" @remove="todos.splice(index,1)"></li>
+        </ul>
+    </div>
     <div id="app4">
         <ul v-for="key of keys" v-if="key%2===0">
             <li>{{key}}</li>
@@ -27,9 +33,9 @@
     </div>
     <div id="app3">
         <ul>
-            <template v-for="(item,index) in items" :key="item.id">
-                <li>
-                    template : {{index}} - {{item.message}}
+            <template>
+                <li v-for="(item,index) in items" :key="item.id">
+                    XXX = = = template : {{index}} - {{item.message}}
                 </li>
             </template>
         </ul>
