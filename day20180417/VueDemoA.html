@@ -6,6 +6,16 @@
 </head>
 
 <body>
+    <div id="app4">
+        <input v-model="parent" />
+        <br />
+        <child2 :parentmessage="parent"></child2>
+        <child3 v-bind="todo"></child3>
+        <child3 :parentmessage1="todo.parentmessage1" :parentmessage2="todo.parentmessage2"></child3>
+    </div>
+    <div id="app3">
+        <child message="hello Vue×é¼þ" my-message="¹þ¹þ"></child>
+    </div>
     <div id="app">
         <app-component></app-component>
         <app-component2></app-component2>
