@@ -7,6 +7,13 @@
 
 <body>
     <div id="app">
+        <h2>{{total}}</h2>
+        <app-button v-on:add="addTotal"></app-button>
+        <app-button v-on:add="addTotal"></app-button>
+    </div>
+    <div id="app2">
+        <button-message v-on:message="addMsgs"></button-message>
+		<p v-for="msg in msgs">{{msg}}</p>
     </div>
 </body>
 
