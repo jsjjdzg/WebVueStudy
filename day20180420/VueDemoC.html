@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vue插槽分发内容</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="parent">
+            <app-test>
+                <template slot-scope="props">
+                    <span>hello from parent</span>
+                    <span>{{ props.text }}</span>
+                </template>
+            </app-test>
+        </div>
+        <h1>我是父组件的标题</h1>
+        <my-component>
+            <p>这是一些初始内容</p>
+            <p>这是更多的初始内容</p>
+        </my-component>
+        <app-layout>
+            <h1 slot="header">这里可能是一个页面标题</h1>
+
+            <p>主要内容的一个段落。</p>
+            <p>另一个主要段落。</p>
+
+            <p slot="footer">这里有一些联系信息</p>
+        </app-layout>
+    </div>
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="vueDemoC.js"></script>
