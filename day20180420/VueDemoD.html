@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vue动态组件</title>
+</head>
+
+<body>
+    <div id="app">
+        <keep-alive><component :is="currentView"></component></keep-alive>
+		<component :is="currentView2"></component>
+    </div>
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="vueDemoD.js"></script>
